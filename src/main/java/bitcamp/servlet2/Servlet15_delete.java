@@ -13,7 +13,8 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
-@WebServlet("/servlet15/delete")
+
+@WebServlet("/servlet/servlet15/delete")
 public class Servlet15_delete extends GenericServlet {
   private static final long serialVersionUID = 1L;
 
@@ -26,12 +27,12 @@ public class Servlet15_delete extends GenericServlet {
     
     Connection con = null;
     PreparedStatement stmt = null;
-    
     try {
       Class.forName("com.mysql.jdbc.Driver");
       con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java89db", "java89", "1111");
       stmt = con.prepareStatement("delete from ex_students where uid=?");
       
+      // 첫 번째 in-parameter 값 설정
       stmt.setString(1, request.getParameter("userId"));
       
       int count = stmt.executeUpdate();
@@ -40,8 +41,8 @@ public class Servlet15_delete extends GenericServlet {
       out.println("<html>");
       out.println("<head>");
       out.println("<meta charset='UTF-8'>");
-      out.println("<meta name='viewport' content='width=device-width, user-scalable=no', maximum-scale=1.0'>");
-      out.println("<title>학생관리-변경</title>");
+      out.println("<meta name='viewport' content='width=device-width, user-scalable=no'>");
+      out.println("<title>학생관리-삭제</title>");
       out.println("</head>");
       out.println("<body>");
       out.println("<h1>삭제 결과</h1>");
@@ -53,13 +54,23 @@ public class Servlet15_delete extends GenericServlet {
       }
       
       out.println("</body>");
-      out.println("<html>");
-     
+      out.println("</html>");
+      
     } catch (Exception e) {
       e.printStackTrace();
+      
     } finally {
-      try{stmt.close();} catch (Exception e) {}
-      try{con.close();} catch (Exception e) {}
+      try {stmt.close();} catch (Exception e) {}
+      try {con.close();} catch (Exception e) {}
     }
   }
+  
 }
+
+
+
+
+
+
+
+

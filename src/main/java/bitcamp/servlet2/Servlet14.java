@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
+
 @WebServlet("/servlet14")
 public class Servlet14 extends GenericServlet {
   private static final long serialVersionUID = 1L;
@@ -44,10 +45,20 @@ public class Servlet14 extends GenericServlet {
       
     } catch (Exception e) {
       e.printStackTrace();
+      
     } finally {
-      try{rs.close();} catch (Exception e) {}
-      try{stmt.close();} catch (Exception e) {}
-      try{con.close();} catch (Exception e) {}
+      try {rs.close();} catch (Exception e) {}
+      try {stmt.close();} catch (Exception e) {}
+      try {con.close();} catch (Exception e) {}
     }
   }
+  
 }
+
+
+
+
+
+
+
+
