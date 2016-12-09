@@ -7,13 +7,13 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
+
 @WebServlet("/servlet15/update")
 public class Servlet15_update extends GenericServlet {
   private static final long serialVersionUID = 1L;
@@ -27,7 +27,6 @@ public class Servlet15_update extends GenericServlet {
     
     Connection con = null;
     PreparedStatement stmt = null;
-    
     try {
       Class.forName("com.mysql.jdbc.Driver");
       con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java89db", "java89", "1111");
@@ -51,7 +50,7 @@ public class Servlet15_update extends GenericServlet {
       out.println("<html>");
       out.println("<head>");
       out.println("<meta charset='UTF-8'>");
-      out.println("<meta name='viewport' content='width=device-width, user-scalable=no', maximum-scale=1.0'>");
+      out.println("<meta name='viewport' content='width=device-width, user-scalable=no'>");
       out.println("<title>학생관리-변경</title>");
       out.println("</head>");
       out.println("<body>");
@@ -64,13 +63,23 @@ public class Servlet15_update extends GenericServlet {
       }
       
       out.println("</body>");
-      out.println("<html>");
-     
+      out.println("</html>");
+      
     } catch (Exception e) {
       e.printStackTrace();
+      
     } finally {
-      try{stmt.close();} catch (Exception e) {}
-      try{con.close();} catch (Exception e) {}
+      try {stmt.close();} catch (Exception e) {}
+      try {con.close();} catch (Exception e) {}
     }
   }
+  
 }
+
+
+
+
+
+
+
+
