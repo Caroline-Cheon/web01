@@ -89,14 +89,7 @@ public class Servlet27_view extends HttpServlet {
       out.println("<button type='submit'>변경</button>");
       out.printf(" <a href='delete?userId=%s'>삭제</a>", rs.getString("uid"));
       out.println(" <a href='list'>목록</a>");
-      out.println("<button type='button' onclick='alert('Hello world!')'>Click Me!</button>");
       out.println("</form>");
-      out.println("<form action='delete' method='GET'>");
-      out.printf("<input name='userId' type='hidden' value='%s'>\n",
-          rs.getString("uid"));
-      out.println("<button type='submit'>삭제</button>");
-      out.println("</form>");
-      
       out.println("</body>");
       out.println("</html>");
       
