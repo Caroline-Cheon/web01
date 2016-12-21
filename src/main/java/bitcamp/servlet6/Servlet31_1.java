@@ -2,6 +2,10 @@
  * => ServletRequest는 저장소 기능을 갖고 있다.
  * => 포워딩, 인클루딩 서블릿 끼리 데이터를 공유할 때 사용한다.
  * => setAttribute(키, 값) / getAttribute(키)
+ * => lifecycle
+ *    요청 --> HttpServletRequest 객체와 HttpServletResponse 객체가 생성된다. --> 응답 후 삭제
+ *    즉, 요청이 처리되는 동안만 유지된다.
+ *   
  */
 package bitcamp.servlet6;
 
