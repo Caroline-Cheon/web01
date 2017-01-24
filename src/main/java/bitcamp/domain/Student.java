@@ -23,6 +23,13 @@ public class Student implements Serializable {
     this.tel = tel;
   }
 
+  public Student(String name, String email, String tel, boolean working) {
+    this.name = name;
+    this.email = email;
+    this.tel = tel;
+    this.working = working;
+  }
+  
   public String getUserId() {
     return userId;
   }
